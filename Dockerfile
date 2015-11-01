@@ -12,10 +12,12 @@ ADD ./etc/nginx-conf /etc/nginx/conf.d
 ADD ./etc/scripts /usr/local
 RUN chmod a+x /usr/local/start.sh
 
+RUN wget http://www.us.apache.org/dist/tomcat/tomcat-7/v7.0.65/bin/apache-tomcat-7.0.65.tar.gz
 RUN cd /usr/local && tar xzf /tmp/apache-tomcat-7.0.65.tar.gz
 RUN ln -s /usr/local/apache-tomcat-7.0.65 /usr/local/tomcat
 RUN rm /tmp/apache-tomcat-7.0.65.tar.gz
 
+RUN wget http://219.233.31.85/mirror.sdunix.com/apache/maven/maven-3/3.3.3/binaries/apache-maven-3.3.3-bin.tar.gz
 RUN cd /usr/local && tar xzf /tmp/apache-maven-3.1.1-bin.tar.gz
 RUN ln -s /usr/local/apache-maven-3.1.1 /usr/local/maven
 RUN rm /tmp/apache-maven-3.1.1-bin.tar.gz
