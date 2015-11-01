@@ -6,6 +6,8 @@ RUN apt-get update
 RUN apt-get install openjdk-7-jre -y
 RUN apt-get install openjdk-7-jdk -y
 RUN apt-get install nginx -y
+RUN apt-get install wget -y
+RUN apt-get install openssh-server -y
 
 ADD ./etc/nginx-conf /etc/nginx/conf.d
 
