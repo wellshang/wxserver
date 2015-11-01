@@ -9,7 +9,7 @@ RUN apt-get install nginx -y
 RUN apt-get install wget -y
 RUN apt-get install openssh-server -y
 
-ADD ./pkg/apache-tomcat-7.0.65.tar.gz /tmp/apache-tomcat-7.0.65.tar.gz
+ADD ./pkgs/apache-tomcat-7.0.65.tar.gz /tmp/apache-tomcat-7.0.65.tar.gz
 ADD ./pkgs/apache-maven-3.3.3-bin.tar.gz /tmp/apache-maven-3.3.3-bin.tar.gz
 ADD ./etc/nginx-conf /etc/nginx/conf.d
 ADD ./etc/scripts /usr/local
