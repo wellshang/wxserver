@@ -16,7 +16,8 @@ RUN chmod a+x /usr/local/start.sh
 
 RUN cd /tmp/
 RUN wget http://www.us.apache.org/dist/tomcat/tomcat-7/v7.0.65/bin/apache-tomcat-7.0.65.tar.gz
-RUN cd /usr/local && tar xzf /tmp/apache-tomcat-7.0.65.tar.gz
+RUN tar xzf /tmp/apache-tomcat-7.0.65.tar.gz
+RUN ls
 RUN ln -s /usr/local/apache-tomcat-7.0.65 /usr/local/tomcat
 RUN rm /tmp/apache-tomcat-7.0.65.tar.gz
 RUN cd /usr/local/tomcat/conf && sed -i "s/8080/80/g" sserver.xml
