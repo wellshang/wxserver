@@ -5,15 +5,16 @@ services:
 env:
 
 install:
-    - wget -O /tmp/apache-maven-3.1.1-bin.tar.gz http://ftp.jaist.ac.jp/pub/apache/maven/maven-3/3.1.1/binaries/apache-maven-3.1.1-bin.tar.gz
-    - cd /usr/local && tar xzf /tmp/apache-maven-3.1.1-bin.tar.gz
-    - ln -s /usr/local/apache-maven-3.1.1 /usr/local/maven
-    - rm /tmp/apache-maven-3.1.1-bin.tar.gz
+    - wget -O /tmp/apache-maven-3.3.3-bin.tar.gz http://219.233.31.85/mirror.sdunix.com/apache/maven/maven-3/3.3.3/binaries/apache-maven-3.3.3-bin.tar.gz
+    - cd /usr/local && tar xzf /tmp/apache-maven-3.3.3-bin.tar.gz
+    - ln -s /usr/local/apache-maven/usr/local/maven
+    - rm /tmp/apache-maven-3.3.3-bin.tar.gz
 
 before_script:  
     - echo "Setup begin"
 
 script:
     - cd webapp
+    - /usr/local/maven/bin/mvn clean
     - /usr/local/maven/bin/mvn install -q -DskipTests=true
     - /usr/local/maven/bin/mvn test
