@@ -18,7 +18,7 @@ RUN cd /usr/local && tar xzf /tmp/apache-tomcat-7.0.65.tar.gz
 RUN ln -s /usr/local/apache-tomcat-7.0.65 /usr/local/tomcat
 RUN rm /tmp/apache-tomcat-7.0.65.tar.gz
 
-RUN cd /tmp && wget http://219.233.31.85/mirror.sdunix.com/apache/maven/maven-3/3.3.3/binaries/apache-maven-3.3.3-bin.tar.gz
+RUN cd /tmp && wget http://mirrors.hust.edu.cn/apache/maven/maven-3/3.3.3/binaries/apache-maven-3.3.3-bin.tar.gz
 RUN cd /usr/local && tar xzf /tmp/apache-maven-3.3.3-bin.tar.gz
 RUN ln -s /usr/local/apache-maven-3.3.3 /usr/local/maven
 RUN rm /tmp/apache-maven-3.3.3-bin.tar.gz
