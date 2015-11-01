@@ -15,9 +15,11 @@ ADD ./etc/scripts /usr/local
 RUN chmod a+x /usr/local/start.sh
 
 RUN cd /tmp/
+RUN rm -rf apache-tomcat*
 RUN wget http://www.us.apache.org/dist/tomcat/tomcat-7/v7.0.65/bin/apache-tomcat-7.0.65.tar.gz
 RUN tar xzf /tmp/apache-tomcat-7.0.65.tar.gz
-RUN ls
+RUN ls apache-tomcat-7.0.65
+RUN mv apache-tomcat-7.0.65 /usr/local
 RUN ln -s /usr/local/apache-tomcat-7.0.65 /usr/local/tomcat
 RUN rm /tmp/apache-tomcat-7.0.65.tar.gz
 RUN cd /usr/local/tomcat/conf && sed -i "s/8080/80/g" sserver.xml
