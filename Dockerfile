@@ -30,6 +30,8 @@ ENV TOMCAT_HOME /usr/local/tomcat
 ENV MAVEN_HOME /usr/local/maven
 ENV APP_HOME /webapp
 
+RUN mkdir -p ~/.m2
+ADD ./etc/maven/settings.xml ~/.m2
 RUN cd /webapp && /usr/local/maven/bin/mvn clean install package 
 RUN rm -rf $TOMCAT_HOME/webapps/*
 RUN cd /webapp && cp target/wx_server.war $TOMCAT_HOME/webapps/ROOT.war
