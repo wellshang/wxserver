@@ -34,6 +34,7 @@ RUN cd /webapp && /usr/local/maven/bin/mvn clean install package
 RUN rm -rf $TOMCAT_HOME/webapps/*
 RUN cd /webapp && cp target/wx_server.war $TOMCAT_HOME/webapps/ROOT.war
 
+CMD service ssh start
 CMD /usr/local/start.sh && tail -F /usr/local/tomcat/logs/catalina.out
 
 EXPOSE 80 8080
