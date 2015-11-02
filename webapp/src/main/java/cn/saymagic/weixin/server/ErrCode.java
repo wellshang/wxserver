@@ -3,113 +3,112 @@ package cn.saymagic.weixin.server;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * å¾®ä¿¡å…¬ä¼—å¹³å°å…¨å±€è¿”å›ç è¯´æ˜
- */
 public class ErrCode {
-	
-	private static Map<String,String> codeMap = new HashMap<String,String>();
-	
+
+	private static Map<String, String> codeMap = new HashMap<String, String>();
+
 	static {
-		codeMap.put("-1","ç³»ç»Ÿç¹å¿™");
-		codeMap.put("0","è¯·æ±‚æˆåŠŸ");
-		codeMap.put("40001","è·å–access_tokenæ—¶AppSecreté”™è¯¯ï¼Œæˆ–è€…access_tokenæ— æ•ˆ");
-		codeMap.put("40002","ä¸åˆæ³•çš„å‡­è¯ç±»å‹");
-		codeMap.put("40003","ä¸åˆæ³•çš„OpenID");
-		codeMap.put("40004","ä¸åˆæ³•çš„åª’ä½“æ–‡ä»¶ç±»å‹");
-		codeMap.put("40005","ä¸åˆæ³•çš„æ–‡ä»¶ç±»å‹");
-		codeMap.put("40006","ä¸åˆæ³•çš„æ–‡ä»¶å¤§å°");
-		codeMap.put("40007","ä¸åˆæ³•çš„åª’ä½“æ–‡ä»¶id");
-		codeMap.put("40008","ä¸åˆæ³•çš„æ¶ˆæ¯ç±»å‹");
-		codeMap.put("40009","ä¸åˆæ³•çš„å›¾ç‰‡æ–‡ä»¶å¤§å°");
-		codeMap.put("40010","ä¸åˆæ³•çš„è¯­éŸ³æ–‡ä»¶å¤§å°");
-		codeMap.put("40011","ä¸åˆæ³•çš„è§†é¢‘æ–‡ä»¶å¤§å°");
-		codeMap.put("40012","ä¸åˆæ³•çš„ç¼©ç•¥å›¾æ–‡ä»¶å¤§å°");
-		codeMap.put("40013","ä¸åˆæ³•çš„APPID");
-		codeMap.put("40014","ä¸åˆæ³•çš„access_token");
-		codeMap.put("40015","ä¸åˆæ³•çš„èœå•ç±»å‹");
-		codeMap.put("40016","ä¸åˆæ³•çš„æŒ‰é’®ä¸ªæ•°");
-		codeMap.put("40017","ä¸åˆæ³•çš„æŒ‰é’®ä¸ªæ•°");
-		codeMap.put("40018","ä¸åˆæ³•çš„æŒ‰é’®åå­—é•¿åº¦");
-		codeMap.put("40019","ä¸åˆæ³•çš„æŒ‰é’®KEYé•¿åº¦");
-		codeMap.put("40020","ä¸åˆæ³•çš„æŒ‰é’®URLé•¿åº¦");
-		codeMap.put("40021","ä¸åˆæ³•çš„èœå•ç‰ˆæœ¬å·");
-		codeMap.put("40022","ä¸åˆæ³•çš„å­èœå•çº§æ•°");
-		codeMap.put("40023","ä¸åˆæ³•çš„å­èœå•æŒ‰é’®ä¸ªæ•°");
-		codeMap.put("40024","ä¸åˆæ³•çš„å­èœå•æŒ‰é’®ç±»å‹");
-		codeMap.put("40025","ä¸åˆæ³•çš„å­èœå•æŒ‰é’®åå­—é•¿åº¦");
-		codeMap.put("40026","ä¸åˆæ³•çš„å­èœå•æŒ‰é’®KEYé•¿åº¦");
-		codeMap.put("40027","ä¸åˆæ³•çš„å­èœå•æŒ‰é’®URLé•¿åº¦");
-		codeMap.put("40028","ä¸åˆæ³•çš„è‡ªå®šä¹‰èœå•ä½¿ç”¨ç”¨æˆ·");
-		codeMap.put("40029","ä¸åˆæ³•çš„oauth_code");
-		codeMap.put("40030","ä¸åˆæ³•çš„refresh_token");
-		codeMap.put("40031","ä¸åˆæ³•çš„openidåˆ—è¡¨");
-		codeMap.put("40032","ä¸åˆæ³•çš„openidåˆ—è¡¨é•¿åº¦");
-		codeMap.put("40033","ä¸åˆæ³•çš„è¯·æ±‚å­—ç¬¦ï¼Œä¸èƒ½åŒ…å«\\uxxxxæ ¼å¼çš„å­—ç¬¦");
-		codeMap.put("40035","ä¸åˆæ³•çš„å‚æ•°");
-		codeMap.put("40038","ä¸åˆæ³•çš„è¯·æ±‚æ ¼å¼");
-		codeMap.put("40039","ä¸åˆæ³•çš„URLé•¿åº¦");
-		codeMap.put("40050","ä¸åˆæ³•çš„åˆ†ç»„id");
-		codeMap.put("40051","åˆ†ç»„åå­—ä¸åˆæ³•");
-		codeMap.put("41001","ç¼ºå°‘access_tokenå‚æ•°");
-		codeMap.put("41002","ç¼ºå°‘appidå‚æ•°");
-		codeMap.put("41003","ç¼ºå°‘refresh_tokenå‚æ•°");
-		codeMap.put("41004","ç¼ºå°‘secretå‚æ•°");
-		codeMap.put("41005","ç¼ºå°‘å¤šåª’ä½“æ–‡ä»¶æ•°æ®");
-		codeMap.put("41006","ç¼ºå°‘media_idå‚æ•°");
-		codeMap.put("41007","ç¼ºå°‘å­èœå•æ•°æ®");
-		codeMap.put("41008","ç¼ºå°‘oauth code");
-		codeMap.put("41009","ç¼ºå°‘openid");
-		codeMap.put("42001","access_tokenè¶…æ—¶");
-		codeMap.put("42002","refresh_tokenè¶…æ—¶");
-		codeMap.put("42003","oauth_codeè¶…æ—¶");
-		codeMap.put("43001","éœ€è¦GETè¯·æ±‚");
-		codeMap.put("43002","éœ€è¦POSTè¯·æ±‚");
-		codeMap.put("43003","éœ€è¦HTTPSè¯·æ±‚");
-		codeMap.put("43004","éœ€è¦æ¥æ”¶è€…å…³æ³¨");
-		codeMap.put("43005","éœ€è¦å¥½å‹å…³ç³»");
-		codeMap.put("44001","å¤šåª’ä½“æ–‡ä»¶ä¸ºç©º");
-		codeMap.put("44002","POSTçš„æ•°æ®åŒ…ä¸ºç©º");
-		codeMap.put("44003","å›¾æ–‡æ¶ˆæ¯å†…å®¹ä¸ºç©º");
-		codeMap.put("44004","æ–‡æœ¬æ¶ˆæ¯å†…å®¹ä¸ºç©º");
-		codeMap.put("45001","å¤šåª’ä½“æ–‡ä»¶å¤§å°è¶…è¿‡é™åˆ¶");
-		codeMap.put("45002","æ¶ˆæ¯å†…å®¹è¶…è¿‡é™åˆ¶");
-		codeMap.put("45003","æ ‡é¢˜å­—æ®µè¶…è¿‡é™åˆ¶");
-		codeMap.put("45004","æè¿°å­—æ®µè¶…è¿‡é™åˆ¶");
-		codeMap.put("45005","é“¾æ¥å­—æ®µè¶…è¿‡é™åˆ¶");
-		codeMap.put("45006","å›¾ç‰‡é“¾æ¥å­—æ®µè¶…è¿‡é™åˆ¶");
-		codeMap.put("45007","è¯­éŸ³æ’­æ”¾æ—¶é—´è¶…è¿‡é™åˆ¶");
-		codeMap.put("45008","å›¾æ–‡æ¶ˆæ¯è¶…è¿‡é™åˆ¶");
-		codeMap.put("45009","æ¥å£è°ƒç”¨è¶…è¿‡é™åˆ¶");
-		codeMap.put("45010","åˆ›å»ºèœå•ä¸ªæ•°è¶…è¿‡é™åˆ¶");
-		codeMap.put("45015","å›å¤æ—¶é—´è¶…è¿‡é™åˆ¶");
-		codeMap.put("45016","ç³»ç»Ÿåˆ†ç»„ï¼Œä¸å…è®¸ä¿®æ”¹");
-		codeMap.put("45017","åˆ†ç»„åå­—è¿‡é•¿");
-		codeMap.put("45018","åˆ†ç»„æ•°é‡è¶…è¿‡ä¸Šé™");
-		codeMap.put("46001","ä¸å­˜åœ¨åª’ä½“æ•°æ®");
-		codeMap.put("46002","ä¸å­˜åœ¨çš„èœå•ç‰ˆæœ¬");
-		codeMap.put("46003","ä¸å­˜åœ¨çš„èœå•æ•°æ®");
-		codeMap.put("46004","ä¸å­˜åœ¨çš„ç”¨æˆ·");
-		codeMap.put("47001","è§£æJSON/XMLå†…å®¹é”™è¯¯");
-		codeMap.put("48001","apiåŠŸèƒ½æœªæˆæƒ");
-		codeMap.put("50001","ç”¨æˆ·æœªæˆæƒè¯¥api");
-		codeMap.put("61451","å‚æ•°é”™è¯¯(invalid parameter)");
-		codeMap.put("61452","æ— æ•ˆå®¢æœè´¦å·(invalid kf_account)");
-		codeMap.put("61453","å®¢æœå¸å·å·²å­˜åœ¨(kf_account exsited)");
-		codeMap.put("61454","å®¢æœå¸å·åé•¿åº¦è¶…è¿‡é™åˆ¶(ä»…å…è®¸10ä¸ªè‹±æ–‡å­—ç¬¦ï¼Œä¸åŒ…æ‹¬@åŠ@åçš„å…¬ä¼—å·çš„å¾®ä¿¡å·)(invalid kf_acount length)");
-		codeMap.put("61455","å®¢æœå¸å·ååŒ…å«éæ³•å­—ç¬¦(ä»…å…è®¸è‹±æ–‡+æ•°å­—)(illegal character in kf_account)");
-		codeMap.put("61456","å®¢æœå¸å·ä¸ªæ•°è¶…è¿‡é™åˆ¶(10ä¸ªå®¢æœè´¦å·)(kf_account count exceeded)");
-		codeMap.put("61457","æ— æ•ˆå¤´åƒæ–‡ä»¶ç±»å‹(invalid file type)");
-		codeMap.put("61450","ç³»ç»Ÿé”™è¯¯(system error)");
-		codeMap.put("61500","æ—¥æœŸæ ¼å¼é”™è¯¯");
-		codeMap.put("61501","æ—¥æœŸèŒƒå›´é”™è¯¯");
+		codeMap.put("-1", "ÏµÍ³·±Ã¦");
+		codeMap.put("0", "ÇëÇó³É¹¦");
+		codeMap.put("40001", "»ñÈ¡access_tokenÊ±AppSecret´íÎó£¬»òÕßaccess_tokenÎŞĞ§");
+		codeMap.put("40002", "²»ºÏ·¨µÄÆ¾Ö¤ÀàĞÍ");
+		codeMap.put("40003", "²»ºÏ·¨µÄOpenID");
+		codeMap.put("40004", "²»ºÏ·¨µÄÃ½ÌåÎÄ¼şÀàĞÍ");
+		codeMap.put("40005", "²»ºÏ·¨µÄÎÄ¼şÀàĞÍ");
+		codeMap.put("40006", "²»ºÏ·¨µÄÎÄ¼ş´óĞ¡");
+		codeMap.put("40007", "²»ºÏ·¨µÄÃ½ÌåÎÄ¼şid");
+		codeMap.put("40008", "²»ºÏ·¨µÄÏûÏ¢ÀàĞÍ");
+		codeMap.put("40009", "²»ºÏ·¨µÄÍ¼Æ¬ÎÄ¼ş´óĞ¡");
+		codeMap.put("40010", "²»ºÏ·¨µÄÓïÒôÎÄ¼ş´óĞ¡");
+		codeMap.put("40011", "²»ºÏ·¨µÄÊÓÆµÎÄ¼ş´óĞ¡");
+		codeMap.put("40012", "²»ºÏ·¨µÄËõÂÔÍ¼ÎÄ¼ş´óĞ¡");
+		codeMap.put("40013", "²»ºÏ·¨µÄAPPID");
+		codeMap.put("40014", "²»ºÏ·¨µÄaccess_token");
+		codeMap.put("40015", "²»ºÏ·¨µÄ²Ëµ¥ÀàĞÍ");
+		codeMap.put("40016", "²»ºÏ·¨µÄ°´Å¥¸öÊı");
+		codeMap.put("40017", "²»ºÏ·¨µÄ°´Å¥¸öÊı");
+		codeMap.put("40018", "²»ºÏ·¨µÄ°´Å¥Ãû×Ö³¤¶È");
+		codeMap.put("40019", "²»ºÏ·¨µÄ°´Å¥KEY³¤¶È");
+		codeMap.put("40020", "²»ºÏ·¨µÄ°´Å¥URL³¤¶È");
+		codeMap.put("40021", "²»ºÏ·¨µÄ²Ëµ¥°æ±¾ºÅ");
+		codeMap.put("40022", "²»ºÏ·¨µÄ×Ó²Ëµ¥¼¶Êı");
+		codeMap.put("40023", "²»ºÏ·¨µÄ×Ó²Ëµ¥°´Å¥¸öÊı");
+		codeMap.put("40024", "²»ºÏ·¨µÄ×Ó²Ëµ¥°´Å¥ÀàĞÍ");
+		codeMap.put("40025", "²»ºÏ·¨µÄ×Ó²Ëµ¥°´Å¥Ãû×Ö³¤¶È");
+		codeMap.put("40026", "²»ºÏ·¨µÄ×Ó²Ëµ¥°´Å¥KEY³¤¶È");
+		codeMap.put("40027", "²»ºÏ·¨µÄ×Ó²Ëµ¥°´Å¥URL³¤¶È");
+		codeMap.put("40028", "²»ºÏ·¨µÄ×Ô¶¨Òå²Ëµ¥Ê¹ÓÃÓÃ»§");
+		codeMap.put("40029", "²»ºÏ·¨µÄoauth_code");
+		codeMap.put("40030", "²»ºÏ·¨µÄrefresh_token");
+		codeMap.put("40031", "²»ºÏ·¨µÄopenidÁĞ±í");
+		codeMap.put("40032", "²»ºÏ·¨µÄopenidÁĞ±í³¤¶È");
+		codeMap.put("40033", "²»ºÏ·¨µÄÇëÇó×Ö·û£¬²»ÄÜ°üº¬\\uxxxx¸ñÊ½µÄ×Ö·û");
+		codeMap.put("40035", "²»ºÏ·¨µÄ²ÎÊı");
+		codeMap.put("40038", "²»ºÏ·¨µÄÇëÇó¸ñÊ½");
+		codeMap.put("40039", "²»ºÏ·¨µÄURL³¤¶È");
+		codeMap.put("40050", "²»ºÏ·¨µÄ·Ö×éid");
+		codeMap.put("40051", "·Ö×éÃû×Ö²»ºÏ·¨");
+		codeMap.put("41001", "È±ÉÙaccess_token²ÎÊı");
+		codeMap.put("41002", "È±ÉÙappid²ÎÊı");
+		codeMap.put("41003", "È±ÉÙrefresh_token²ÎÊı");
+		codeMap.put("41004", "È±ÉÙsecret²ÎÊı");
+		codeMap.put("41005", "È±ÉÙ¶àÃ½ÌåÎÄ¼şÊı¾İ");
+		codeMap.put("41006", "È±ÉÙmedia_id²ÎÊı");
+		codeMap.put("41007", "È±ÉÙ×Ó²Ëµ¥Êı¾İ");
+		codeMap.put("41008", "È±ÉÙoauth code");
+		codeMap.put("41009", "È±ÉÙopenid");
+		codeMap.put("42001", "access_token³¬Ê±");
+		codeMap.put("42002", "refresh_token³¬Ê±");
+		codeMap.put("42003", "oauth_code³¬Ê±");
+		codeMap.put("43001", "ĞèÒªGETÇëÇó");
+		codeMap.put("43002", "ĞèÒªPOSTÇëÇó");
+		codeMap.put("43003", "ĞèÒªHTTPSÇëÇó");
+		codeMap.put("43004", "ĞèÒª½ÓÊÕÕß¹Ø×¢");
+		codeMap.put("43005", "ĞèÒªºÃÓÑ¹ØÏµ");
+		codeMap.put("44001", "¶àÃ½ÌåÎÄ¼şÎª¿Õ");
+		codeMap.put("44002", "POSTµÄÊı¾İ°üÎª¿Õ");
+		codeMap.put("44003", "Í¼ÎÄÏûÏ¢ÄÚÈİÎª¿Õ");
+		codeMap.put("44004", "ÎÄ±¾ÏûÏ¢ÄÚÈİÎª¿Õ");
+		codeMap.put("45001", "¶àÃ½ÌåÎÄ¼ş´óĞ¡³¬¹ıÏŞÖÆ");
+		codeMap.put("45002", "ÏûÏ¢ÄÚÈİ³¬¹ıÏŞÖÆ");
+		codeMap.put("45003", "±êÌâ×Ö¶Î³¬¹ıÏŞÖÆ");
+		codeMap.put("45004", "ÃèÊö×Ö¶Î³¬¹ıÏŞÖÆ");
+		codeMap.put("45005", "Á´½Ó×Ö¶Î³¬¹ıÏŞÖÆ");
+		codeMap.put("45006", "Í¼Æ¬Á´½Ó×Ö¶Î³¬¹ıÏŞÖÆ");
+		codeMap.put("45007", "ÓïÒô²¥·ÅÊ±¼ä³¬¹ıÏŞÖÆ");
+		codeMap.put("45008", "Í¼ÎÄÏûÏ¢³¬¹ıÏŞÖÆ");
+		codeMap.put("45009", "½Ó¿Úµ÷ÓÃ³¬¹ıÏŞÖÆ");
+		codeMap.put("45010", "´´½¨²Ëµ¥¸öÊı³¬¹ıÏŞÖÆ");
+		codeMap.put("45015", "»Ø¸´Ê±¼ä³¬¹ıÏŞÖÆ");
+		codeMap.put("45016", "ÏµÍ³·Ö×é£¬²»ÔÊĞíĞŞ¸Ä");
+		codeMap.put("45017", "·Ö×éÃû×Ö¹ı³¤");
+		codeMap.put("45018", "·Ö×éÊıÁ¿³¬¹ıÉÏÏŞ");
+		codeMap.put("46001", "²»´æÔÚÃ½ÌåÊı¾İ");
+		codeMap.put("46002", "²»´æÔÚµÄ²Ëµ¥°æ±¾");
+		codeMap.put("46003", "²»´æÔÚµÄ²Ëµ¥Êı¾İ");
+		codeMap.put("46004", "²»´æÔÚµÄÓÃ»§");
+		codeMap.put("47001", "½âÎöJSON/XMLÄÚÈİ´íÎó");
+		codeMap.put("48001", "api¹¦ÄÜÎ´ÊÚÈ¨");
+		codeMap.put("50001", "ÓÃ»§Î´ÊÚÈ¨¸Ãapi");
+		codeMap.put("61451", "²ÎÊı´íÎó(invalid parameter)");
+		codeMap.put("61452", "ÎŞĞ§¿Í·şÕËºÅ(invalid kf_account)");
+		codeMap.put("61453", "¿Í·şÕÊºÅÒÑ´æÔÚ(kf_account exsited)");
+		codeMap.put("61454",
+				"¿Í·şÕÊºÅÃû³¤¶È³¬¹ıÏŞÖÆ(½öÔÊĞí10¸öÓ¢ÎÄ×Ö·û£¬²»°üÀ¨@¼°@ºóµÄ¹«ÖÚºÅµÄÎ¢ĞÅºÅ)(invalid kf_acount length)");
+		codeMap.put("61455",
+				"¿Í·şÕÊºÅÃû°üº¬·Ç·¨×Ö·û(½öÔÊĞíÓ¢ÎÄ+Êı×Ö)(illegal character in kf_account)");
+		codeMap.put("61456", "¿Í·şÕÊºÅ¸öÊı³¬¹ıÏŞÖÆ(10¸ö¿Í·şÕËºÅ)(kf_account count exceeded)");
+		codeMap.put("61457", "ÎŞĞ§Í·ÏñÎÄ¼şÀàĞÍ(invalid file type)");
+		codeMap.put("61450", "ÏµÍ³´íÎó(system error)");
+		codeMap.put("61500", "ÈÕÆÚ¸ñÊ½´íÎó");
+		codeMap.put("61501", "ÈÕÆÚ·¶Î§´íÎó");
 	}
-	
-	public static String errMsg(Integer errCode){
-		if(errCode != null && codeMap.containsKey(errCode+"")){
-			return codeMap.get(errCode+"");
+
+	public static String errMsg(Integer errCode) {
+		if (errCode != null && codeMap.containsKey(errCode + "")) {
+			return codeMap.get(errCode + "");
 		}
 		return null;
 	}
-	
+
 }

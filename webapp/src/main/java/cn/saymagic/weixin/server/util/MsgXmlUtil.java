@@ -10,11 +10,6 @@ import org.dom4j.Document;
 import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
 
-
-
-
-
-
 import cn.saymagic.weixin.server.bean.Article;
 import cn.saymagic.weixin.server.bean.MsgRequest;
 import cn.saymagic.weixin.server.bean.MsgResponseNews;
@@ -26,58 +21,51 @@ import com.thoughtworks.xstream.io.HierarchicalStreamWriter;
 import com.thoughtworks.xstream.io.xml.PrettyPrintWriter;
 import com.thoughtworks.xstream.io.xml.XppDriver;
 
-/**
- * xml 消息处理工具类
- * 
- */
-
 @SuppressWarnings("unchecked")
 public class MsgXmlUtil {
 
-	//将request 消息 转换成 请求消息对象
-	public static MsgRequest parseXml(HttpServletRequest request) throws Exception {
+	public static MsgRequest parseXml(HttpServletRequest request)
+			throws Exception {
 		MsgRequest msgReq = new MsgRequest();
-		
-		// 解析XML
+
 		InputStream inputStream = request.getInputStream();
-		
+
 		SAXReader reader = new SAXReader();
 		Document document = reader.read(inputStream);
 		Element root = document.getRootElement();
 		List<Element> elementList = root.elements();
-		
-		// 遍历节点，封装成对象
-		for (Element e : elementList){
+
+		for (Element e : elementList) {
 			String name = e.getName();
 			String text = e.getText();
-			
-			if("MsgType".equals(name)){//消息类型
+
+			if ("MsgType".equals(name)) {
 				msgReq.setMsgType(text);
-			}else if("MsgId".equals(name)){
+			} else if ("MsgId".equals(name)) {
 				msgReq.setMsgId(text);
-			}else if("FromUserName".equals(name)){
+			} else if ("FromUserName".equals(name)) {
 				msgReq.setFromUserName(text);
-			}else if("ToUserName".equals(name)){
+			} else if ("ToUserName".equals(name)) {
 				msgReq.setToUserName(text);
-			}else if("CreateTime".equals(name)){
+			} else if ("CreateTime".equals(name)) {
 				msgReq.setCreateTime(text);
-			}else if("Content".equals(name)){//文本消息
+			} else if ("Content".equals(name)) {
 				msgReq.setContent(text);
-			}else if("Recognition".equals(name)){
+			} else if ("Recognition".equals(name)) {
 				msgReq.setRecognition(text);
-			}else if("PicUrl".equals(name)){//图片消息
+			} else if ("PicUrl".equals(name)) {
 				msgReq.setPicUrl(text);
-			}else if("Location_X".equals(name)){//地理位置消息
+			} else if ("Location_X".equals(name)) {
 				msgReq.setLocation_X(text);
-			}else if("Location_Y".equals(name)){
+			} else if ("Location_Y".equals(name)) {
 				msgReq.setLocation_Y(text);
-			}else if("Scale".equals(name)){
+			} else if ("Scale".equals(name)) {
 				msgReq.setScale(text);
-			}else if("Label".equals(name)){
+			} else if ("Label".equals(name)) {
 				msgReq.setLabel(text);
-			}else if("Event".equals(name)){//事件消息
+			} else if ("Event".equals(name)) {
 				msgReq.setEvent(text);
-			}else if("EventKey".equals(name)){
+			} else if ("EventKey".equals(name)) {
 				msgReq.setEventKey(text);
 			}
 		}
@@ -85,30 +73,28 @@ public class MsgXmlUtil {
 		inputStream = null;
 		return msgReq;
 	}
-	
+
 	public static String textToXml(MsgResponseText text) {
 		xstream.alias("xml", text.getClass());
 		return xstream.toXML(text);
 	}
-	
+
 	public static String newsToXml(MsgResponseNews news) {
 		xstream.alias("xml", news.getClass());
 		xstream.alias("item", new Article().getClass());
 		return xstream.toXML(news);
 	}
-	
-	/**
-	 * 扩展xstream，让xml节点增加CDATA标记
-	 */
+
 	public static XStream xstream = new XStream(new XppDriver() {
 		public HierarchicalStreamWriter createWriter(Writer out) {
 			return new PrettyPrintWriter(out) {
 				boolean CDATA = true;
-				
+
 				@SuppressWarnings("rawtypes")
 				public void startNode(String name, Class clazz) {
 					super.startNode(name, clazz);
 				}
+
 				protected void writeText(QuickWriter writer, String text) {
 					if (CDATA) {
 						writer.write("<![CDATA[");
@@ -121,5 +107,5 @@ public class MsgXmlUtil {
 			};
 		}
 	});
-	
+
 }

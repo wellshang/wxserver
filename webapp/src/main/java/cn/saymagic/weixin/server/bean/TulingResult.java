@@ -1,50 +1,38 @@
 package cn.saymagic.weixin.server.bean;
 
-public class TulingResult
-{
+public class TulingResult {
 	private int code;
 	private String text;
 
-	public TulingResult()
-	{
+	public TulingResult() {
 	}
 
-	public TulingResult(int resultCode, String msg)
-	{
+	public TulingResult(int resultCode, String msg) {
 		this.code = resultCode;
 		this.text = msg;
 	}
 
-	public TulingResult(int resultCode)
-	{
+	public TulingResult(int resultCode) {
 		this.code = resultCode;
 	}
 
-	public int getCode()
-	{
+	public int getCode() {
 		return code;
 	}
 
-	public void setCode(int code)
-	{
+	public void setCode(int code) {
 		this.code = code;
 	}
 
-	public String getText()
-	{
-		if (code > 400000 || text == null  
-				|| text.trim().equals(""))  
-		{  
-			return "è¯¥åŠŸèƒ½ç­‰å¾…å¼€å‘...";  
+	public String getText() {
+		if (code > 400000 || text == null || text.trim().equals("")) {
+			return "ÕýÔÚ¿ª·¢...";
 		}
 		return text;
 	}
 
-	public void setText(String text)
-	{
+	public void setText(String text) {
 		this.text = text;
 	}
-
-
 
 }

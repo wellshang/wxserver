@@ -7,14 +7,12 @@ import cn.saymagic.weixin.server.bean.MsgResponseText;
 import cn.saymagic.weixin.server.util.MsgXmlUtil;
 import cn.saymagic.weixin.server.util.MsicUtil;
 
-
-
 public abstract class BaseHandler<T extends MsgRequest> {
 
-	
 	public abstract String doHandleMsg(T msgRequest);
-	
-	protected String getResponseStringByContent(String content,MsgRequest msgRequest){
+
+	protected String getResponseStringByContent(String content,
+			MsgRequest msgRequest) {
 		MsgResponseText reponseText = new MsgResponseText();
 		reponseText.setToUserName(msgRequest.getFromUserName());
 		reponseText.setFromUserName(msgRequest.getToUserName());
@@ -24,5 +22,5 @@ public abstract class BaseHandler<T extends MsgRequest> {
 		msgRequest.setMsgResponse(reponseText);
 		return MsicUtil.formatString(MsgXmlUtil.textToXml(reponseText));
 	}
-	
+
 }
